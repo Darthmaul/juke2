@@ -83,13 +83,14 @@ class Home extends Component {
   render () {
     return (
       <ScrollView style={{backgroundColor: 'white'}}>
+        <Text h3 style={styles.albums}>Albums</Text>
         <Avatar
           large
           icon={{type: 'rocket', color: 'orange'}}
           overlayContainerStyle={{backgroundColor: 'white'}}
           onPress={() => console.log("Works!")}
           activeOpacity={0.7}
-          containerStyle={{flex: 4, marginTop: 75}}
+          containerStyle={{flex: 4}}
         />
         <Text h3 style={styles.singles}>Singles</Text>
       {/*Dynamically load our list based on the list constant above*/}
@@ -126,6 +127,11 @@ styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 75,
     marginBottom: -15,
+  },
+  albums: {
+    textAlign: 'center',
+    marginTop: 75,
+    marginBottom: 0,
   },
   hero: {
     marginTop: 60,
