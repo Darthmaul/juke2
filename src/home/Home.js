@@ -51,22 +51,13 @@ const list = [
   },
 ]
 
-/*var whoosh = new Sound('advertising.mp3', Sound.MAIN_BUNDLE, (error) => {
-  if (error) {
-    console.log('failed to load the sound', error);
-    return;
-  } 
-  // loaded successfully
-  console.log('duration in seconds: ' + whoosh.getDuration() + 'number of channels: ' + whoosh.getNumberOfChannels());
-});
-*/
 //Main home class
 class Home extends Component {
   
   constructor(props) {
     super(props);
 
-    Sound.setCategory('Playback', true); // true = mixWithOthers
+    Sound.setCategory('Ambient', true); // true = mixWithOthers
 
     this.playSoundBundle = () => {
       const s = new Sound('advertising.mp3', Sound.MAIN_BUNDLE, (e) => {
@@ -83,13 +74,14 @@ class Home extends Component {
   render () {
     return (
       <ScrollView style={{backgroundColor: 'white'}}>
+        <Text h3 style={styles.albums}>Albums</Text>
         <Avatar
           large
           icon={{type: 'rocket', color: 'orange'}}
           overlayContainerStyle={{backgroundColor: 'white'}}
           onPress={() => console.log("Works!")}
           activeOpacity={0.7}
-          containerStyle={{flex: 4, marginTop: 75}}
+          containerStyle={{flex: 4}}
         />
         <Text h3 style={styles.singles}>Singles</Text>
       {/*Dynamically load our list based on the list constant above*/}
@@ -126,6 +118,11 @@ styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 75,
     marginBottom: -15,
+  },
+  albums: {
+    textAlign: 'center',
+    marginTop: 75,
+    marginBottom: 0,
   },
   hero: {
     marginTop: 60,
