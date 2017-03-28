@@ -51,22 +51,13 @@ const list = [
   },
 ]
 
-/*var whoosh = new Sound('advertising.mp3', Sound.MAIN_BUNDLE, (error) => {
-  if (error) {
-    console.log('failed to load the sound', error);
-    return;
-  } 
-  // loaded successfully
-  console.log('duration in seconds: ' + whoosh.getDuration() + 'number of channels: ' + whoosh.getNumberOfChannels());
-});
-*/
 //Main home class
 class Home extends Component {
   
   constructor(props) {
     super(props);
 
-    Sound.setCategory('Playback', true); // true = mixWithOthers
+    Sound.setCategory('Ambient', true); // true = mixWithOthers
 
     this.playSoundBundle = () => {
       const s = new Sound('advertising.mp3', Sound.MAIN_BUNDLE, (e) => {
